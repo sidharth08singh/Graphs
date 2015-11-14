@@ -55,10 +55,18 @@ int deleteQ(QNode_p *head)
 	return front;
 }
 
+// A utility function to check if Queue is empty or not
+int isEmpty(QNode_p *head)
+{
+	if(*head == NULL)
+		return 1;
+	else
+		return 0;
+}		
+
 // Print the Nodes of the Queue
 void print(QNode_p *head)
 {
-	printf("Reached Here\n");
 	if(*head == NULL)
 	{
 		printf("Queue Empty\n");
@@ -66,7 +74,6 @@ void print(QNode_p *head)
 	else
 	{		
 		QNode_p temp = *head;
-		printf("Reached Here\n");
 		while(temp != NULL)
 		{
 			printf("%d ", temp->element);
@@ -76,19 +83,21 @@ void print(QNode_p *head)
 	}
 }
 
+
+
+/*
 int main()
 {
 	head = NULL;
-	int ch;
+	int ch,val;
 	while(1)
 	{
 		printf("1. Insert\n2. Delete\n3. Print\n4. Exit\n");
-		scanf("%d - ", &ch);
+		scanf("%d", &ch);
 		switch(ch)
 		{
 			case 1: 
 			{
-				int val;
 				printf("Value : ");
 				scanf("%d", &val);
 				insertQ(&head, val);
@@ -97,14 +106,12 @@ int main()
 
 			case 2: 
 			{
-				printf("In case 2\n");
 				deleteQ(&head);
 				break;
 			}
 			
 			case 3: 
 			{
-				printf("In case 3\n");
 				print(&head);
 				break;
 			}
@@ -118,7 +125,8 @@ int main()
 			}
 		}
 	}
+	return 1;
 }
-	
+*/	
 	
 
